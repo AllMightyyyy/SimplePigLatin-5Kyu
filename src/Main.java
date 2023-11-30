@@ -15,7 +15,9 @@ public class Main {
         String[] words = str.split(" ");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
-            words[i] = words[i].substring(1) + words[i].charAt(0) + "ay";
+            if (Character.isLetter(words[i].charAt(0))) {
+                words[i] = words[i].substring(1) + words[i].charAt(0) + "ay";
+            }
             sb.append(words[i]).append(" ");
         }
         return sb.toString().trim();
